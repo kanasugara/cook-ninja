@@ -2689,8 +2689,8 @@ a {
 
 .main-grid {
   display: grid;
-  grid-template-rows: 64px minmax(320px, 40vh) 60px repeat(5, auto);
-  grid-template-areas: "image" "header" "ingridients" "timetocook" "steps" "nutrition" "comments" "footer"; }
+  grid-template-rows: 64px minmax(320px, 40vh) auto repeat(5, auto);
+  grid-template-areas: "header" "image" "timetocook" "ingridients" "nutrition"  "steps" "comments" "footer"; }
 
 header {
   display: grid;
@@ -2871,11 +2871,6 @@ header {
 
 #app > *:nth-child(8) {
   height: 20vh; }
-
-.time {
-  background-color: transparent !important;
-  border-top: 4px solid #bd273f;
-  width: 100%; }
 
 .cn-main-image {
   background: no-repeat center center;
@@ -3159,10 +3154,10 @@ main:hover .image-txt a {
 .padding-right-lg {
   padding-right: 32px !important; }
 
-.padding-right-md {
+.padding-right-md, .time li {
   padding-right: 16px !important; }
 
-.padding-right-sm {
+.padding-right-sm, .time li:before {
   padding-right: 8px !important; }
 
 .padding-right-xs {

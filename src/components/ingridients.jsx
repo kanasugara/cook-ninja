@@ -104,7 +104,12 @@ class Ingridients extends Component {
           name: "Parmesan shavings",
           optional: true
         }
-      ]
+      ],
+      small_data :{
+        time: '50 min',
+        serves: 8,
+        price: 53.51
+      }
     };
   }
 
@@ -116,7 +121,11 @@ class Ingridients extends Component {
             <a href="#" className="frontage">
               Ingridients
               <div className="pull-right">
-                <div className="padding-right-lg inline-block">
+                <ul className="time inline-block">
+                  <li class="far fa-clock">{this.state.small_data.time}</li>
+                  <li class="fas fa-utensils">{this.state.small_data.serves} <span style={{fontWeight: "300"}}>servings</span> </li>
+                </ul>
+                <div className="padding-right-md padding-left-md inline-block">
                   <button className="us ">US</button>
                   <button className="metric active">Metric</button>
                 </div>

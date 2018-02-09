@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/src/styles.css
+/src/main.css
 /README.md
 
 # testing

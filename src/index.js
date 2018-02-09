@@ -24,7 +24,7 @@ class App extends Component {
       <div id="app" className= "main-grid">
         <Header style={{gridArea: "header"}} logo = {logo} />
         <Main image={image} style={{gridArea: "image"}}/>
-        <TimeToCook style={{gridArea: "timetocook"}}/>
+        
         <Ingridients style={{gridArea: "ingridients"}}/>
         <Steps style={{gridArea: "steps"}}/>
         <Nutrition style={{gridArea: "nutrition"}}/>
@@ -38,6 +38,7 @@ class App extends Component {
 //  <Header/>
 // <Main image={image} />
 // <Footer/>
+// <TimeToCook style={{gridArea: "timetocook"}}/>
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
