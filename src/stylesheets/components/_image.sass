@@ -1,0 +1,42 @@
+.cn-main-image
+	background: no-repeat center center 
+	background-size: cover
+	transition: 200ms all ease-in-out
+
+.gradient
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
+
+.image-txt
+	padding-left: 12.5%
+	padding-right: 12.5%
+	margin: 0
+	bottom: -10vh
+	a
+		transition: 200ms all ease-in-out
+		color: yellow
+		opacity: 0
+
+.cn-author, .follow-image
+	opacity: 0
+	transition: 200ms all ease-in-out
+
+.follow-image
+	top: 20%
+	background-color: coral
+	li
+		border-bottom: solid 1px white
+		&:last-child
+			border: none
+		i
+			color: white
+
+main:hover
+	.cn-main-image
+		box-shadow: inset 0px 70px 150px 10px rgba(0,0,0,0.5)
+	.cn-author, .follow-image
+		opacity: 1
+
+	.image-txt a
+		opacity: 0.7

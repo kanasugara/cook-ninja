@@ -1,0 +1,70 @@
+.cn-ingr
+	height: 100% !important
+	overflow: hidden
+	background-color: transparent !important
+	a
+		color: black
+
+.cn-ingr-list-item
+	cursor: pointer
+	background-color: #f3f3f3
+	color: #464646
+	transition: all 300ms ease-in-out
+
+	.extra
+		opacity: 0.5
+
+	.name
+		font-weight: 700
+
+	&:nth-child(2n)
+		background: #fff
+		box-shadow: inset 0 0 1px rgba(0,0,0,.2)
+
+	&:hover
+		a, span
+			opacity: 0.5
+		.extra
+			opacity: 0.3
+.cn-ingr-list
+	.optional, .extra-optional
+		@extend .text-muted
+
+// .cn-ingr-list
+// 	max-height: 0
+// 	transition: 300ms all ease-in-out
+
+// .cn-ingr:hover
+// 	.cn-ingr-list
+// 		max-height: 100vh
+
+.us, .metric
+	@extend	.text-sm 
+	@extend .frontage
+	@extend .padding-top-xs
+
+	border: none
+	color: white
+	cursor: pointer
+	background-color: #d1d1d1
+	box-shadow: inset 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1)
+	&.active
+		background-color: black
+
+.us
+	border-top-left-radius: 1em
+	border-bottom-left-radius: 1em
+
+.metric
+	border-top-right-radius: 1em
+	border-bottom-right-radius: 1em
+
+.add-list
+	background-color: transparent
+	border-radius: 10px
+	border: none
+	margin: 0 auto
+	display: block
+	cursor: pointer
+	&:hover
+		opacity: 0.5

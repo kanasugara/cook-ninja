@@ -1,0 +1,19 @@
+.visible-phone
+	display: block
+
+.hidden-phone, .visible-desktop
+	display: none
+
+@media screen and (min-width: 768px)
+	.visible-phone
+		display: none 
+
+	.hidden-phone
+		display: block
+
+@media screen and (min-width: 1024px)
+	.visible-phone
+		display: none
+
+	.hidden-phone, .visible-desktop
+		display: block

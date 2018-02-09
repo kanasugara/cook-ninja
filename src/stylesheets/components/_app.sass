@@ -1,0 +1,18 @@
+$cn-navbar-colors: #ffe100, #be3d86, #e7a100, #27a6bd, #bd273f, #000, #ccc5f0, #ccc5bd, #ffe100
+$cn-sections-height: auto, auto, auto, 30vh, 20vh, 800px, 300px, 20vh
+
+#root 
+	max-width: 1200px
+	margin: 0 auto
+	
+@for $i from 1 through length($cn-navbar-colors)
+	#app > div:nth-child(#{$i})
+		background-color: nth($cn-navbar-colors, $i)
+
+@for $i from 1 through length($cn-sections-height)
+	#app > *:nth-child(#{$i})
+		height: nth($cn-sections-height, $i)
+.time
+	background-color: transparent !important
+	border-top: 4px solid #bd273f
+	width: 100%

@@ -1,0 +1,80 @@
+$cn-navbar-colors: #ffe100, #be3d86, #e7a100, #27a6bd, #bd273f
+$cn-header-max-height-mobile: 60px
+
+@for $i from 1 through length($cn-navbar-colors)
+	header li:nth-child(#{$i})
+		border-bottom: 4px solid nth($cn-navbar-colors, $i)
+
+	header li:nth-child(#{$i}).active, header li:nth-child(#{$i}):hover 
+		background-color: nth($cn-navbar-colors, $i)
+		a:hover
+ 			color: white
+header
+	border-bottom: solid 4px coral
+	a
+		color: black
+	li
+		transition: 200ms all ease-in-out
+	
+// LOGO
+
+.cn-logo
+	background: center  no-repeat
+	background-size: contain
+
+// MENU
+			
+.cn-navbar
+	display: flex
+	flex-wrap: nowrap
+	width: 100%
+	li
+		width: 20%
+		a
+			display: flex
+			span
+				align-self: flex-end
+				margin: 0 auto
+.cn-navbar-bars
+	width: 100%
+	border: none
+	background: transparent
+	&:hover
+		background: black
+		color: white
+// SEARCH ICON
+
+.cn-search
+	text-align: center
+	&:hover
+		background-color:  #000
+		a
+			color: white
+	a
+		line-height: $cn-header-max-height-mobile
+
+
+
+@media screen and (min-width: 768px)
+	header
+		border-bottom: none
+	.cn-logo
+		background-position-x: left
+		border-bottom: solid 4px coral
+	.cn-search
+		border-bottom: 4px solid #000
+		&.active, &:hover
+			background-color:  #000
+			color: white
+
+@media screen and (min-width: 1024px)
+	header
+		border-bottom: none
+		height: 88px !important
+	.cn-logo
+		background-position-x: left
+		border-bottom: solid 4px coral
+	.cn-search a
+		line-height: 45px
+
+// justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
