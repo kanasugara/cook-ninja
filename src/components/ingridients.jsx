@@ -118,7 +118,7 @@ class Ingridients extends Component {
     	<div className="cn-ingr">
     		<div className="base-border-bottom cn-ingr-header">
           <h4 className="padding-bottom-xs padding-top-xs"> 
-            <a href="#" className="frontage">
+            <a href="#" className="f-frontage">
                <span style={{letterSpacing: '-2px'}}>Ingridients</span> 
               <div className="pull-right">
                 <ul className="time inline-block f-pistara padding-right-md">
@@ -142,7 +142,7 @@ class Ingridients extends Component {
             </a>
           </h4>
         </div>
-        <div className="cn-ingr-list">
+        <div className="cn-ingr-list f-roboto-light">
           <ul>
             {this.state.data.map((item, index) => {
               return (

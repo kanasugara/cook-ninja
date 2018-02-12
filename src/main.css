@@ -2630,6 +2630,11 @@ a {
   font-weight: bold; }
 
 @font-face {
+  font-family: 'Ninja';
+  src: url(./fonts/Ninja/Ninja.ttf);
+  font-weight: bold; }
+
+@font-face {
   font-family: "Roboto";
     font-family-src: url(./fonts/Roboto/Roboto-Light.ttf);
   font-style: normal;
@@ -2645,7 +2650,7 @@ a {
   font-family: 'Roboto';
   src: url(./fonts/Roboto/Roboto-Regular.ttf);
   font-style: normal;
-  ont-weight: 400; }
+  font-weight: 400; }
 
 @font-face {
   font-family: 'Roboto';
@@ -3006,22 +3011,30 @@ main:hover .image-txt a {
 .text-center {
   text-align: center; }
 
-.frontage, .us, .metric {
+.f-frontage, .us, .metric {
   font-family: 'Frontage', serif;
   font-weight: normal; }
 
 .f-pistara {
   font-family: 'Pistara', serif; }
 
+.f-ninja {
+  font-family: 'Ninja', serif; }
+
 .f-charger {
   font-family: 'Charger', serif; }
 
-.roboto {
+.f-roboto {
   font-family: 'Roboto', serif; }
 
-.roboto-i {
+.f-roboto-i {
   font-family: 'Roboto', serif;
   font-style: italic; }
+
+.f-roboto-light {
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 300; }
 
 .text-7xl {
   font-size: 80px; }
