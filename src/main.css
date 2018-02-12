@@ -2891,8 +2891,8 @@ header {
   background: linear-gradient(rgba(255, 255, 255, 0), #ffffff); }
 
 .image-txt {
-  padding-left: 12.5%;
-  padding-right: 12.5%;
+  padding-left: 6.25%;
+  padding-right: 6.25%;
   margin: 0;
   bottom: -10vh; }
   .image-txt a {
@@ -3173,7 +3173,7 @@ main:hover .image-txt a {
 .padding-right-md {
   padding-right: 16px !important; }
 
-.padding-right-sm, .time li {
+.padding-right-sm {
   padding-right: 8px !important; }
 
 .padding-right-xs, .time li:before {

@@ -119,10 +119,10 @@ class Ingridients extends Component {
     		<div className="base-border-bottom cn-ingr-header">
           <h4 className="padding-bottom-xs padding-top-xs"> 
             <a href="#" className="frontage">
-              Ingridients
+               <span style={{letterSpacing: '-2px'}}>Ingridients</span> 
               <div className="pull-right">
-                <ul className="time inline-block f-pistara">
-                  <li className="far fa-clock">
+                <ul className="time inline-block f-pistara padding-right-md">
+                  <li className="far fa-clock padding-right-sm margin-right-xs">
                     <span className="f-charger">
                       {this.state.small_data.time}
                     </span>
