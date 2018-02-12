@@ -116,16 +116,24 @@ class Ingridients extends Component {
   render() {
     return (
     	<div className="cn-ingr">
-    		<div className="base-border-bottom cn-ingr-header ">
-          <h4 className="margin-sm padding-bottom-xs padding-top-xs margin-left-md margin-right-md "> 
+    		<div className="base-border-bottom cn-ingr-header">
+          <h4 className="padding-bottom-xs padding-top-xs"> 
             <a href="#" className="frontage">
               Ingridients
               <div className="pull-right">
-                <ul className="time inline-block">
-                  <li class="far fa-clock">{this.state.small_data.time}</li>
-                  <li class="fas fa-utensils">{this.state.small_data.serves} <span style={{fontWeight: "300"}}>servings</span> </li>
+                <ul className="time inline-block f-pistara">
+                  <li className="far fa-clock">
+                    <span className="f-charger">
+                      {this.state.small_data.time}
+                    </span>
+                  </li>
+                  <li className="fas fa-utensils">
+                    <span style={{fontWeight: "300"}} className="f-charger">
+                      {this.state.small_data.serves} servings
+                    </span>
+                  </li>
                 </ul>
-                <div className="padding-right-md padding-left-md inline-block">
+                <div className="padding-right-md padding-left-md inline-block hidden-phone">
                   <button className="us ">US</button>
                   <button className="metric active">Metric</button>
                 </div>

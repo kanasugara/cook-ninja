@@ -4,6 +4,9 @@
 	background-color: transparent !important
 	a
 		color: black
+.cn-ingr-header
+	h4
+		@extend .margin-sm
 
 .cn-ingr-list-item
 	cursor: pointer
@@ -50,7 +53,8 @@
 	box-shadow: inset 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1)
 	&.active
 		background-color: black
-
+	&:focus
+		outline: none
 .us
 	border-top-left-radius: 1em
 	border-bottom-left-radius: 1em
@@ -59,11 +63,12 @@
 	border-top-right-radius: 1em
 	border-bottom-right-radius: 1em
 
+
 .time
 	li
-		@extend .padding-right-md
+		@extend .padding-right-sm
 		&:before
-			@extend .padding-right-sm
+			@extend .padding-right-xs
 
 
 .add-list

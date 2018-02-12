@@ -33,10 +33,10 @@ class Main extends Component {
               <a href=""><i className="fas fa-star-half"/></a>
               <a href=""><i className="far fa-star"/></a>
             </h1>
-            <h1 className="frontage text-center margin-none uppercase">
+            <h1 className="f-pistara text-center margin-none uppercase">
               {this.state.receptName}
             </h1>
-            <p className="margin-md padding-top-sm base-border-top roboto-i text-center">
+            <p className="margin-md padding-top-sm base-border-top f-pistara text-center">
               {this.state.receptQuote}
             </p>
           </div>
