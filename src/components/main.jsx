@@ -17,7 +17,7 @@ class Main extends Component {
       <main style={{paddingBottom: "10vh"}}>
         <div className="h100 relative cn-main-image" style={{backgroundImage:"url(" + this.props.image + ")"}}>
           <div className="gradient absolute stick-bottom" style={{width: "100%"}}/>
-          <p className="absolute stick-top stick-right frontage margin-md cn-author" style={{color: "white"}}>
+          <p className="absolute stick-top stick-right f-frontage margin-md cn-author" style={{color: "white"}}>
             <span>{this.state.receptDate}</span> | <span className="bold">{this.state.receptAuthor}</span>
           </p>
           <ul className="absolute stick-left follow-image text-3xl">

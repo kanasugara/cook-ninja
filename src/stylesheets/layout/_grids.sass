@@ -1,7 +1,7 @@
 .main-grid
 	display: grid
 	grid-template-rows: 64px minmax(320px, 40vh) auto repeat(5, auto) 
-	grid-template-areas: "header" "image" "timetocook" "ingridients" "nutrition"  "steps" "comments" "footer"
+	grid-template-areas: "header" "image" "ingridients" "nutrition" "footer" "steps" "comments" 
 header
 	display: grid
 	max-height: 60px
@@ -11,7 +11,7 @@ header
 @media screen and (min-width: 768px)
 	.main-grid
 		grid-template-rows: 64px minmax(320px, 40vh) 60px 200px repeat(6, auto)
-		grid-template-areas: "header header" "image image" "timetocook timetocook" "ingridients steps" "nutrition steps" "comments comments" "footer footer"
+		grid-template-areas: "header header" "image image" "ingridients steps" "nutrition steps" "comments comments" "footer footer"
 	header
 		grid-template-areas: "header-logo header-menu header-search"
 		grid-template-columns: 2fr 4fr 60px

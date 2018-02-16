@@ -2703,7 +2703,7 @@ a {
 .main-grid {
   display: grid;
   grid-template-rows: 64px minmax(320px, 40vh) auto repeat(5, auto);
-  grid-template-areas: "header" "image" "timetocook" "ingridients" "nutrition"  "steps" "comments" "footer"; }
+  grid-template-areas: "header" "image" "ingridients" "nutrition" "footer" "steps" "comments"; }
 
 header {
   display: grid;
@@ -2714,7 +2714,7 @@ header {
 @media screen and (min-width: 768px) {
   .main-grid {
     grid-template-rows: 64px minmax(320px, 40vh) 60px 200px repeat(6, auto);
-    grid-template-areas: "header header" "image image" "timetocook timetocook" "ingridients steps" "nutrition steps" "comments comments" "footer footer"; }
+    grid-template-areas: "header header" "image image" "ingridients steps" "nutrition steps" "comments comments" "footer footer"; }
   header {
     grid-template-areas: "header-logo header-menu header-search";
     grid-template-columns: 2fr 4fr 60px; } }
@@ -2769,7 +2769,7 @@ header li:nth-child(5).active, header li:nth-child(5):hover {
     color: white; }
 
 header {
-  border-bottom: solid 4px coral; }
+  border-bottom: solid 4px black; }
   header a {
     color: black; }
   header li {
@@ -2813,7 +2813,7 @@ header {
     border-bottom: none; }
   .cn-logo {
     background-position-x: left;
-    border-bottom: solid 4px coral; }
+    border-bottom: solid 4px black; }
   .cn-search {
     border-bottom: 4px solid #000; }
     .cn-search.active, .cn-search:hover {
@@ -2826,7 +2826,7 @@ header {
     height: 88px !important; }
   .cn-logo {
     background-position-x: left;
-    border-bottom: solid 4px coral; }
+    border-bottom: solid 4px black; }
   .cn-search a {
     line-height: 45px; } }
 

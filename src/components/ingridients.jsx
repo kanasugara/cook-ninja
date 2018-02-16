@@ -156,7 +156,7 @@ class Ingridients extends Component {
               )
             })}
           </ul>
-          <button className="text-2xl padding-bottom-sm padding-top-sm margin-bottom-sm add-list">
+          <button className="text-2xl padding-top-sm margin-bottom-sm add-list">
             <i className="padding-right-sm fas fa-plus-circle"></i>
             <span>Add all to shoping list</span> 
           </button>
