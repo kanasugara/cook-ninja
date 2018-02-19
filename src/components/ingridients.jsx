@@ -115,7 +115,7 @@ class Ingridients extends Component {
 
   render() {
     return (
-    	<div className="cn-ingr">
+    	<div className="cn-ingr base-border-bottom">
     		<div className="base-border-bottom cn-ingr-header">
           <h4 className="padding-bottom-xs padding-top-xs"> 
             <a href="#" className="f-frontage">

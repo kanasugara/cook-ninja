@@ -2982,13 +2982,15 @@ main:hover .image-txt a {
     opacity: 0.5; }
 
 .cn-speps-num {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  line-height: 30px;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
   background-color: black;
-  text-align: center; }
+  opacity: 0.75;
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75); }
 
 .uppercase {
   text-transform: uppercase; }

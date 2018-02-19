@@ -22,7 +22,7 @@ class App extends Component {
         <Header style={{gridArea: "header"}} logo = {logo} />
         <Main image={image} style={{gridArea: "image"}}/>
         <Ingridients style={{gridArea: "ingridients"}}/>
-        <Steps style={{gridArea: "steps"}}/>
+        <Steps image={image} style={{gridArea: "steps"}}/>
         <Nutrition style={{gridArea: "nutrition"}}/>
         <div style={{gridArea: "comments"}}></div>
         <Footer style={{gridArea: "footer"}}/>
