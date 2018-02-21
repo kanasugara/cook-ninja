@@ -12,6 +12,11 @@ class Main extends Component {
     };
   }
 
+  handleClick = () => {
+    let elmnt = document.getElementById("cn-steps");
+    elmnt.scrollIntoView(true);
+  }
+
   render() {
     return (
       <main style={{paddingBottom: "10vh"}}>
@@ -22,7 +27,7 @@ class Main extends Component {
           </p>
           <ul className="absolute stick-left follow-image text-3xl">
              {this.state.shareIcons.map((item, index) => {
-              return <li key={index} style={{padding: "10px "}}><i  className={'fab '+ item}/></li>
+              return <li key={index} style={{padding: "10px"}}><i  className={'fab '+ item}/></li>
             })}
           </ul>
           <div className="absolute image-txt">
@@ -33,12 +38,19 @@ class Main extends Component {
               <a href=""><i className="fas fa-star-half"/></a>
               <a href=""><i className="far fa-star"/></a>
             </h1>
-            <h1 className="f-pistara text-center margin-none uppercase" style={{letterSpacing: '2px'}}>
+            <h1 className="margin-none f-pistara text-center uppercase" style={{letterSpacing: '2px'}}>
               {this.state.receptName}
             </h1>
-            <p className="margin-top-md margin-bottom-md base-border-top f-pistara text-center" style={{padding: "8px 16px 0",letterSpacing: '1px'}}>
+            <p className="margin-top-md margin-bottom-md base-border-top f-pistara text-center" 
+               style={{padding: "8px 16px 0", letterSpacing: '1px'}}>
               {this.state.receptQuote}
             </p>
+
+            <span className="text-center inline-block f-charger" 
+                  style={{width: "100%", letterSpacing: '2px'}} 
+                  onClick={this.handleClick}>
+              Jump to the directions
+            </span> 
           </div>
         </div>
       </main>

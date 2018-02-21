@@ -8,6 +8,7 @@ import Header from './components/layout/header.jsx';
 import Main from './components/main.jsx';
 import Nutrition from './components/nutrition.jsx';
 import Steps from './components/steps.jsx';
+import ToTheTop from './components/toTheTop.jsx';
 
 import './main.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
         <Nutrition style={{gridArea: "nutrition"}}/>
         <div style={{gridArea: "comments"}}></div>
         <Footer style={{gridArea: "footer"}}/>
+        <ToTheTop />
       </div>
     );
   }

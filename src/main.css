@@ -2992,6 +2992,14 @@ main:hover .image-txt a {
   opacity: 0.75;
   box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75); }
 
+.timing {
+  margin-top: -8px;
+  width: 50vw;
+  max-width: 250px; }
+  .timing li {
+    float: left;
+    width: 33%; }
+
 .uppercase {
   text-transform: uppercase; }
 

@@ -12,31 +12,31 @@ class Steps extends Component {
         "Serve the soup in a bowl with the Parmesan ‘coral’ on the side and a sprinkle of freshly ground black pepper to garnish."
       ],
       timing: {
-        "preparationMinutes": 15,
-        "cookingMinutes": 8
+        preparationMinutes: 15,
+        cookingMinutes: 8
       }
     }
   }
 
   render() {
     return (
-    	<div className="cn-steps margin-top-sm" style={{height: "auto", backgroundColor: "transparent"}}>
+    	<div id="cn-steps" className="margin-top-sm" style={{height: "auto", backgroundColor: "transparent"}}>
         <div className="base-border-bottom padding-sm">
           <span className="uppercase f-frontage text-center text-2xl" style={{letterSpacing: '-4px'}}>Directions</span>
           <div className="pull-right">
-            <button>Hide Photos</button>
-            <ul className="timing pull-left">
+            <button className="hidden-phone pull-right">Hide Photos</button>
+            <ul className="pull-left text-center timing">
                <li>
-                 <span>Prep</span>
-                 <span>10min</span>
+                 <p>Prep</p>
+                 <span>{this.state.timing.preparationMinutes} <span className="text-muted">m</span></span>
                </li>
                 <li>
-                 <span>Prep</span>
-                 <span>10min</span>
+                 <p>Cook</p>
+                 <span>{this.state.timing.cookingMinutes} <span className="text-muted">m</span></span>
                </li>
                 <li>
-                 <span>Prep</span>
-                 <span>10min</span>
+                 <p>Ready in</p>
+                 <span>{this.state.timing.preparationMinutes + this.state.timing.cookingMinutes} <span className="text-muted">m</span></span>
                </li>
             </ul>
           </div>
