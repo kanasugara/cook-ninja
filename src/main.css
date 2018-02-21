@@ -2888,7 +2888,8 @@ header {
 .cn-main-image {
   background: no-repeat center center;
   background-size: cover;
-  transition: 200ms all ease-in-out; }
+  transition: 200ms all ease-in-out;
+  -webkit-backface-visibility: hidden; }
 
 .gradient {
   width: 100%;
@@ -2993,12 +2994,16 @@ main:hover .image-txt a {
   box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75); }
 
 .timing {
+  display: flex;
+  align-items: center;
   margin-top: -8px;
   width: 50vw;
   max-width: 250px; }
   .timing li {
     float: left;
-    width: 33%; }
+    width: calc(33% - 8px); }
+    .timing li:first-child {
+      width: 24px; }
 
 .uppercase {
   text-transform: uppercase; }

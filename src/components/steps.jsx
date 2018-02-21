@@ -11,11 +11,31 @@ class Steps extends Component {
         "Meanwhile, drain the peas (keeping a mugful of the cooking water) and blitz them in a blender or food processor, along with the stock cube and about half the mug of reserved water until smooth. Season and, depending on the consistency you want, add a little more water to thin the soup.",
         "Serve the soup in a bowl with the Parmesan ‘coral’ on the side and a sprinkle of freshly ground black pepper to garnish."
       ],
-      timing: {
-        preparationMinutes: 15,
-        cookingMinutes: 8
-      }
+      timing: [
+        {
+          name: "Prep",
+          amount: 17
+        },
+        {
+          name: "Cook",
+          amount: 8
+        }
+      ]
     }
+    
+    this.totalCookingTime = () => {
+      let total = {};
+      total.name = "Ready in";
+      total.amount = this.state.timing[0].amount + this.state.timing[1].amount;
+      
+      this.setState({
+          timing: this.state.timing.concat([total])
+      });
+    }
+  }
+  
+  componentWillMount = () => {
+    this.totalCookingTime();
   }
 
   render() {
@@ -25,19 +45,16 @@ class Steps extends Component {
           <span className="uppercase f-frontage text-center text-2xl" style={{letterSpacing: '-4px'}}>Directions</span>
           <div className="pull-right">
             <button className="hidden-phone pull-right">Hide Photos</button>
-            <ul className="pull-left text-center timing">
-               <li>
-                 <p>Prep</p>
-                 <span>{this.state.timing.preparationMinutes} <span className="text-muted">m</span></span>
-               </li>
-                <li>
-                 <p>Cook</p>
-                 <span>{this.state.timing.cookingMinutes} <span className="text-muted">m</span></span>
-               </li>
-                <li>
-                 <p>Ready in</p>
-                 <span>{this.state.timing.preparationMinutes + this.state.timing.cookingMinutes} <span className="text-muted">m</span></span>
-               </li>
+            <ul className="pull-left text-center timing f-charger" style={{letterSpacing: '0.5px'}}>
+              <li><span className="text-3xl far fa-clock"/></li>
+              {this.state.timing.map((item, index) => {
+                return ( 
+                  <li key = {index}>
+                    <p>{item.name}</p>
+                    <span>{item.amount}<span className="text-muted">m</span></span>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>
