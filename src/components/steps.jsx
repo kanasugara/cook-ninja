@@ -22,7 +22,7 @@ class Steps extends Component {
         }
       ]
     }
-    
+
     this.totalCookingTime = () => {
       let total = {};
       total.name = "Ready in";
@@ -40,7 +40,7 @@ class Steps extends Component {
 
   render() {
     return (
-    	<div id="cn-steps" className="margin-top-sm" style={{height: "auto", backgroundColor: "transparent"}}>
+    	<div id="cn-steps" className="padding-top-sm" style={{height: "auto", backgroundColor: "transparent"}}>
         <div className="base-border-bottom padding-sm">
           <span className="uppercase f-frontage text-center text-2xl" style={{letterSpacing: '-4px'}}>Directions</span>
           <div className="pull-right">

@@ -109,8 +109,14 @@ class Ingridients extends Component {
         time: '50 min',
         serves: 8,
         price: 53.51
-      }
+      },
+      isUS: false
     };
+
+  }
+  
+  handleMeasureType = e => {
+    this.setState({isUS: !this.state.isUS});
   }
 
   render() {
@@ -121,7 +127,7 @@ class Ingridients extends Component {
             <a href="#" className="f-frontage">
                <span style={{letterSpacing: '-2px'}}>Ingridients</span> 
               <div className="pull-right">
-                <ul className="time inline-block f-pistara padding-right-md">
+                <ul className="time inline-block f-pistara padding-right-md hidden-phone">
                   <li className="far fa-clock padding-right-sm margin-right-xs">
                     <span className="f-charger">
                       {this.state.small_data.time}
@@ -133,9 +139,11 @@ class Ingridients extends Component {
                     </span>
                   </li>
                 </ul>
-                <div className="padding-right-md padding-left-md inline-block hidden-phone">
-                  <button className="us ">US</button>
-                  <button className="metric active">Metric</button>
+                <div className="padding-right-md padding-left-md inline-block">
+                  <button className={"us " + (this.state.isUS ? 'active' : '')} 
+                          onClick={this.handleMeasureType}>US</button>
+                  <button className={"metric " + (!this.state.isUS ? 'active' : '')} 
+                          onClick={this.handleMeasureType}>Metric</button>
                 </div>
                 <i className="fas fa-angle-down"/>
               </div>

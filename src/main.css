@@ -2957,20 +2957,27 @@ main:hover .image-txt a {
   border: none;
   color: white;
   cursor: pointer;
-  background-color: #d1d1d1;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); }
-  .us.active, .metric.active {
-    background-color: black; }
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-size: 201% 100%;
+  transition: all .25s ease-in; }
   .us:focus, .metric:focus {
     outline: none; }
 
 .us {
   border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em; }
+  border-bottom-left-radius: 1em;
+  background-position: 100% 0;
+  background-image: linear-gradient(to left, #d1d1d1, #d1d1d1 50%, black 50%, black); }
+  .us.active {
+    background-position: 0 0; }
 
 .metric {
   border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em; }
+  border-bottom-right-radius: 1em;
+  background-position: 0 0;
+  background-image: linear-gradient(to right, #d1d1d1, #d1d1d1 50%, black 50%, black); }
+  .metric.active {
+    background-position: 100% 0; }
 
 .add-list {
   background-color: transparent;
