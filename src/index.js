@@ -35,3 +35,9 @@ class App extends Component {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
+
+
+//  prevent default for <a> in map.function
+
+// onClick = {(e) => this.handleAddToCart(item, index, e)}
+// e.preventDefault();

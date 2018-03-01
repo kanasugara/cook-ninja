@@ -26,8 +26,7 @@ class Ingridients extends Component {
         {
           type: "gram",
           size: "200g",
-          name: "dried thyme",
-          in_cart: true
+          name: "dried thyme"
         },
         {
           type: "count",
@@ -112,19 +111,7 @@ class Ingridients extends Component {
         price: 53.51
       },
       isUS: false,
-      test:[
-         {
-          type: "spoon",
-          size: "1tsp",
-          name: "rapeseed oil"
-        },
-        {
-          type: "count",
-          size: "2",
-          name: "Grower’s Selection Shallots",
-          extra: "finely chopped"
-        }
-      ]
+      cart:[]
     };
 
   }
@@ -133,33 +120,77 @@ class Ingridients extends Component {
     this.setState({isUS: !this.state.isUS});
   }
 
-  toggle = (index, newname) => {
-    this.setState((prevState, props) => ({
-        // Return new array, do not mutate previous state.
-        names: [
-            ...prevState.names.slice(0, index),
-            { name: newname },
-            ...prevState.names.slice(index + 1),
-        ],
-    }));
-  }
-
-  handleAddToCart = (item, index, e) => {
-    e.preventDefault();
-    if(!item.in_cart){
-      item.in_cart = false;
-    }
+  handleAddToCart = (item, index) => {
     this.setState((prevState, props) => ({
       data: [
         ...prevState.data.slice(0, index),
-        { in_cart : !item.in_cart,
-          name: item.name,
-          size: item.size,
-          type: item.type
-        },
+          { 
+            name: item.name,
+            size: item.size,
+            type: item.type,
+            extra: item.extra,
+            in_fridge: item.in_fridge,
+            extra_optional: item.extra_optional,
+            optional: item.optional,
+            in_cart : !item.in_cart
+          },
         ...prevState.data.slice(index + 1),
-      ],
+      ]
     }));
+
+     const new_cart_item = {
+        name : item.name,
+        size : item.size,
+        type : item.type
+     };
+     
+    if(!item.in_cart) {
+      this.state.cart.push(new_cart_item);
+    }
+    else {
+      const index = this.state.cart.indexOf(new_cart_item);
+      this.state.cart.splice(index, 1);
+    }
+
+    console.log(this.state.cart);
+  }
+  handleAddAllToCart = (someInCart) => {
+    this.state.data.map((item, index) => {
+      
+      let new_cart_item = {
+        name : item.name,
+        size : item.size,
+        type : item.type
+      };      
+
+      if(someInCart) {
+        item.in_cart = true;
+        this.state.cart.push(new_cart_item);
+      }
+      else {
+        item.in_cart = false;
+        const index = this.state.cart.indexOf(new_cart_item);
+        this.state.cart.splice(index, 1);
+      }
+
+      this.setState((prevState, props) => ({
+        data: [
+          ...prevState.data.slice(0, index),
+            { 
+              name: item.name,
+              size: item.size,
+              type: item.type,
+              extra: item.extra,
+              in_fridge: item.in_fridge,
+              extra_optional: item.extra_optional,
+              optional: item.optional,
+              in_cart : item.in_cart
+            },
+          ...prevState.data.slice(index + 1),
+        ]
+      }));
+    })
+    console.log(this.state.cart);
   }
 
   render() {
@@ -168,7 +199,7 @@ class Ingridients extends Component {
     		<div className="base-border-bottom cn-ingr-header">
           <h4 className="padding-bottom-xs padding-top-xs"> 
             <a href="#" className="f-frontage">
-               <span style={{letterSpacing: '-2px'}}>{this.state.test.tata} Ingridients</span> 
+               <span style={{letterSpacing: '-2px'}}>Ingridients</span> 
               <div className="pull-right">
                 <ul className="time inline-block f-pistara padding-right-md hidden-phone">
                   <li className="far fa-clock padding-right-sm margin-right-xs">
@@ -197,8 +228,9 @@ class Ingridients extends Component {
           <ul>
             {this.state.data.map((item, index) => {
               return (
-                <li key={index} className={"cn-ingr-list-item " + (item.optional ? 'optional' : '')}>
-                  <a href="#" onClick = {(e) => this.handleAddToCart(item, index, e)}
+                <li key={index} onClick = {() => {this.handleAddToCart(item, index)}}
+                    className={"cn-ingr-list-item " + (item.optional ? 'optional' : '')}>
+                  <a href="#" style={{width: "18px"}}
                   className={"padding-md padding-right-sm fas " + (!item.in_cart ? item.in_fridge ? "fa-check" : "fa-plus" : "fa-cart-arrow-down")}/>
                   <span className="padding-right-xs">{item.size}</span>
                   <span className="name">{item.name}</span>
@@ -209,8 +241,9 @@ class Ingridients extends Component {
             })}
           </ul>
           <div className="text-center">
-            <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list">
-            <span>Add all to cart</span> 
+            <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list" 
+            onClick = {() => {this.handleAddAllToCart(!this.state.cart.length)}}>
+            <span>{this.state.cart.length ? "Remove all from cart" : "Add all to cart"}</span> 
             </button>
             <i className="fas fa-plus"></i>
             <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list">
