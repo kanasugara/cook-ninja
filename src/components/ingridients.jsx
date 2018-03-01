@@ -116,12 +116,12 @@ class Ingridients extends Component {
 
   }
   
-  handleMeasureType = e => {
+  toggleMeasureType = e => {
     this.setState({isUS: !this.state.isUS});
   }
 
-  handleAddToCart = (item, index) => {
-    this.setState((prevState, props) => ({
+  rerenderList = (item, index) => {
+     this.setState((prevState, props) => ({
       data: [
         ...prevState.data.slice(0, index),
           { 
@@ -132,11 +132,16 @@ class Ingridients extends Component {
             in_fridge: item.in_fridge,
             extra_optional: item.extra_optional,
             optional: item.optional,
-            in_cart : !item.in_cart
+            in_cart : item.in_cart
           },
         ...prevState.data.slice(index + 1),
       ]
     }));
+  }
+
+  handleAddToCart = (item, index) => {
+    item.in_cart = !item.in_cart;
+    this.rerenderList(item, index);
 
      const new_cart_item = {
         name : item.name,
@@ -151,9 +156,8 @@ class Ingridients extends Component {
       const index = this.state.cart.indexOf(new_cart_item);
       this.state.cart.splice(index, 1);
     }
-
-    console.log(this.state.cart);
   }
+
   handleAddAllToCart = (someInCart) => {
     this.state.data.map((item, index) => {
       
@@ -172,25 +176,8 @@ class Ingridients extends Component {
         const index = this.state.cart.indexOf(new_cart_item);
         this.state.cart.splice(index, 1);
       }
-
-      this.setState((prevState, props) => ({
-        data: [
-          ...prevState.data.slice(0, index),
-            { 
-              name: item.name,
-              size: item.size,
-              type: item.type,
-              extra: item.extra,
-              in_fridge: item.in_fridge,
-              extra_optional: item.extra_optional,
-              optional: item.optional,
-              in_cart : item.in_cart
-            },
-          ...prevState.data.slice(index + 1),
-        ]
-      }));
+      this.rerenderList(item, index);
     })
-    console.log(this.state.cart);
   }
 
   render() {
@@ -215,9 +202,9 @@ class Ingridients extends Component {
                 </ul>
                 <div className="padding-right-md padding-left-md inline-block">
                   <button className={"us " + (this.state.isUS ? 'active' : '')} 
-                          onClick={this.handleMeasureType}>US</button>
+                          onClick={this.toggleMeasureType}>US</button>
                   <button className={"metric " + (!this.state.isUS ? 'active' : '')} 
-                          onClick={this.handleMeasureType}>Metric</button>
+                          onClick={this.toggleMeasureType}>Metric</button>
                 </div>
                 <i className="fas fa-angle-down"/>
               </div>
