@@ -140,15 +140,12 @@ class Ingridients extends Component {
   }
 
   handleAddToCart = (item, index) => {
-    item.in_cart = !item.in_cart;
-    this.rerenderList(item, index);
-
      const new_cart_item = {
         name : item.name,
         size : item.size,
         type : item.type
      };
-     
+    
     if(!item.in_cart) {
       this.state.cart.push(new_cart_item);
     }
@@ -156,6 +153,8 @@ class Ingridients extends Component {
       const index = this.state.cart.indexOf(new_cart_item);
       this.state.cart.splice(index, 1);
     }
+    item.in_cart = !item.in_cart;
+    this.rerenderList(item, index);
   }
 
   handleAddAllToCart = (someInCart) => {
@@ -177,9 +176,24 @@ class Ingridients extends Component {
         this.state.cart.splice(index, 1);
       }
       this.rerenderList(item, index);
-    })
+    });
+
   }
 
+  handleAddMissingToCart = () => {
+    this.state.data.map((item, index) => {
+
+    });
+  }
+  componentDidMount() {
+    // let k;
+    // if(this.state.cart.length) k = true;
+    // else k = false;
+    
+    // console.log(k);
+    // console.log(this.state.cart);
+
+  }
   render() {
     return (
     	<div className="cn-ingr base-border-bottom">
@@ -217,8 +231,8 @@ class Ingridients extends Component {
               return (
                 <li key={index} onClick = {() => {this.handleAddToCart(item, index)}}
                     className={"cn-ingr-list-item " + (item.optional ? 'optional' : '')}>
-                  <a href="#" style={{width: "18px"}}
-                  className={"padding-md padding-right-sm fas " + (!item.in_cart ? item.in_fridge ? "fa-check" : "fa-plus" : "fa-cart-arrow-down")}/>
+                  <a href="#" style={{width: "18px"}} onClick = {(e) => e.preventDefault()}
+                     className={"padding-md padding-right-sm fas " + (!item.in_cart ? item.in_fridge ? "fa-check" : "fa-plus" : "fa-cart-arrow-down")}/>
                   <span className="padding-right-xs">{item.size}</span>
                   <span className="name">{item.name}</span>
                   {item.extra ? <span className={"extra " + (item.extra_optional ? "extra-optional" : "")}>, {item.extra} {item.extra_optional ? <span>(optional)</span> : ""} </span> : ""}
@@ -229,12 +243,13 @@ class Ingridients extends Component {
           </ul>
           <div className="text-center">
             <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list" 
-            onClick = {() => {this.handleAddAllToCart(!this.state.cart.length)}}>
-            <span>{this.state.cart.length ? "Remove all from cart" : "Add all to cart"}</span> 
+                    onClick = {() => {this.handleAddAllToCart(!this.state.cart.length)}}>
+              <span>{this.state.cart.length ? "Remove all" : "Add all"}</span> 
             </button>
             <i className="fas fa-plus"></i>
-            <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list">
-              <span>Add missing to cart</span> 
+            <button className="text-2xl padding-top-sm margin-bottom-sm inline-block add-list"
+                    onClick = {() => {this.handleAddMissingToCart}}>
+              <span>Add missing</span> 
             </button>
           </div>
         </div>
